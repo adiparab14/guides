@@ -15,6 +15,7 @@ function searchTermEpic(actions$, { getState }) {
   const Xms = 400;
   const source$ = actions$
     .filter(({ type }) => type === types.updateSearchTerm);
+  let previousSearchTerm = '';
 
   return Observable.merge(
     source$.debounce(Xms),
@@ -22,9 +23,10 @@ function searchTermEpic(actions$, { getState }) {
     )
     .flatMap(() => {
       const { searchTerm } = getState().search;
-      if (searchTerm.length > 2) {
+      if (searchTerm.length > 2 && searchTerm !== previousSearchTerm) {
+        previousSearchTerm = searchTerm;
         return Observable.of(fetchSearchResults());
-    }
+      }
       return Observable.of(nullAction);
     });
 }

@@ -29,7 +29,7 @@ export const reducer = handleActions(
   {
     [types.fetchSearchResults]: state => ({
       ...state,
-      isSearching: true
+      // isSearching: true
     }),
     [types.resetSearch]: state => ({
       ...state,
