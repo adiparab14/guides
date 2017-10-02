@@ -7,8 +7,8 @@ import Navbar from 'react-bootstrap/lib/Navbar';
 import Row from 'react-bootstrap/lib/Row';
 import Link from 'gatsby-link';
 
-import SearchBar from '../LayoutComponents/search/SearchBar.jsx';
-import SideNav from '../LayoutComponents/nav/SideNav.jsx';
+import SearchBar from '../layoutComponents/search/SearchBar.jsx';
+import SideNav from '../layoutComponents/nav/SideNav.jsx';
 
 import 'prismjs/themes/prism.css';
 import '../css/main.scss';

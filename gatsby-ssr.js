@@ -7,18 +7,17 @@ import createStore from './src/store';
 const store = createStore();
 
 exports.replaceRenderer = ({ bodyComponent, replaceBodyHTMLString }) => {
-
-    function renderConnectedBody(reduxStore) {
-        return (
-            <Provider store={ reduxStore }>
-                { bodyComponent }
-            </Provider>
-        );
-    }
-
-    const providerWrappedBodyString = renderToString(
-        renderConnectedBody(store)
+  function renderConnectedBody(reduxStore) {
+    return (
+      <Provider store={ reduxStore }>
+        { bodyComponent }
+      </Provider>
     );
+  }
 
-    replaceBodyHTMLString(providerWrappedBodyString);
+  const providerWrappedBodyString = renderToString(
+    renderConnectedBody(store)
+  );
+
+  replaceBodyHTMLString(providerWrappedBodyString);
 };

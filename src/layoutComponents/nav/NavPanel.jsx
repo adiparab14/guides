@@ -126,7 +126,7 @@ class NavPanel extends PureComponent {
 }
 
 NavPanel.contextTypes = {
-  router: PropTypes.object
+  router: PropTypes.object.isRequired
 };
 NavPanel.displayName = 'NavPanel';
 NavPanel.propTypes = propTypes;
