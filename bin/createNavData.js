@@ -73,7 +73,7 @@ loopPages(addPage)
           );
         })
         .catch(err => {
-          throw err; 
+          throw err;
         });
     }
   );
