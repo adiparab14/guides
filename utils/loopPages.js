@@ -1,7 +1,7 @@
 const { Observable } = require('rx');
 
 const readDir = require('./readDir');
-const info = require('../utils');
+const info = require('./infoLog');
 
 module.exports = function loopPages(handler, dir = 'src/pages') {
   return Observable.from(readDir(dir))
