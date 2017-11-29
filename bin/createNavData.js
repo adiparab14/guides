@@ -27,6 +27,7 @@ function addPage(dirPath, name) {
   const filePath = `${dirPath}/index.md`;
   const content = readIndex(filePath);
   const subDirs = readDir(dirPath);
+  info('In addpage', 'greenBright');
   const title = getPageTitle(content, filePath);
   const isStubbed = isAStubRE.test(content);
   const parent = dirPath.split('/')[dirPath.split('/').length - 2];
@@ -72,7 +73,7 @@ loopPages(addPage)
           );
         })
         .catch(err => {
-          throw err;
+          throw err; 
         });
     }
   );
